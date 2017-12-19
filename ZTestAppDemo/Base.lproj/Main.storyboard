@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ivP-Am-I4f">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ia-4T-2bS">
+                                <rect key="frame" x="137" y="313" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AMM-aJ-J3I"/>
+                                    <constraint firstAttribute="width" constant="46" id="Mem-Yw-a3F"/>
+                                </constraints>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="clk_login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uja-oi-Yc7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8ia-4T-2bS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Nu-tJ-tcv"/>
+                            <constraint firstItem="8ia-4T-2bS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="249" id="ueX-A6-UIb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="giB-G8-dVF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111.875" y="120.4225352112676"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ypN-XF-sXk">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L98-TY-ef2" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l6N-yJ-r14"/>
+                        <viewControllerLayoutGuide type="bottom" id="gZg-63-AWa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4fW-Y8-nNN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o1Y-d7-Usy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="505"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Eih-LJ-b25">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eih-LJ-b25" id="ty4-Ci-SSP">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="L98-TY-ef2" id="bVp-fr-76b"/>
+                                    <outlet property="delegate" destination="L98-TY-ef2" id="BHe-Hv-vwv"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GG-hb-KkI">
+                                <rect key="frame" x="90" y="518" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OTd-mK-Goa"/>
+                                </constraints>
+                                <state key="normal" title="Add file to Root"/>
+                                <connections>
+                                    <action selector="clk_uploadAtRoot:" destination="L98-TY-ef2" eventType="touchUpInside" id="C2H-re-1d0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="6GG-hb-KkI" secondAttribute="trailing" constant="74" id="GEX-wi-kjA"/>
+                            <constraint firstItem="6GG-hb-KkI" firstAttribute="leading" secondItem="4fW-Y8-nNN" secondAttribute="leadingMargin" constant="74" id="J91-Eg-4IO"/>
+                            <constraint firstItem="o1Y-d7-Usy" firstAttribute="top" secondItem="4fW-Y8-nNN" secondAttribute="top" id="KZS-Q1-BYN"/>
+                            <constraint firstItem="o1Y-d7-Usy" firstAttribute="centerX" secondItem="4fW-Y8-nNN" secondAttribute="centerX" id="OdJ-Fd-gtZ"/>
+                            <constraint firstAttribute="trailing" secondItem="o1Y-d7-Usy" secondAttribute="trailing" id="OzN-Q6-cqK"/>
+                            <constraint firstItem="o1Y-d7-Usy" firstAttribute="leading" secondItem="4fW-Y8-nNN" secondAttribute="leading" id="fHF-Rh-V6A"/>
+                            <constraint firstItem="6GG-hb-KkI" firstAttribute="top" secondItem="o1Y-d7-Usy" secondAttribute="bottom" constant="13" id="pam-8N-ZUE"/>
+                            <constraint firstItem="gZg-63-AWa" firstAttribute="top" secondItem="6GG-hb-KkI" secondAttribute="bottom" constant="20" id="ze2-oL-IdT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableviewDetail" destination="o1Y-d7-Usy" id="Ld8-A7-sMO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DkQ-Un-GD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775.625" y="120.4225352112676"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TEW-M5-Rir">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ivP-Am-I4f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xbF-ae-dIV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5AC-cW-PpA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0fI-vZ-A2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="399" y="120"/>
+        </scene>
+    </scenes>
+</document>
